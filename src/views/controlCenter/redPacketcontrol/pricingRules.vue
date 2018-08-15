@@ -3,7 +3,7 @@
         <div class="container">
             <div class="top_tit">
 				<h3>红包定价规则</h3>
-				 <el-button type="primary">增加定价</el-button>
+				 <el-button type="primary" size="small">增加定价</el-button>
 			</div>
 			<div class="bot_form">
 				<el-table :data="tableData" border style="width: 100%">
@@ -77,6 +77,7 @@ export default {
 					display: flex;
 					h3 {
 						flex: 1px;
+						color: #666666;
 					}
 					button {
 						margin-top: 10px;

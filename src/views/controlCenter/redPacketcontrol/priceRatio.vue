@@ -1,11 +1,9 @@
 <template>
 	<div class="priceRatio">
         <div class="container">
-            <el-form :inline="true">
-                <el-form-item>
-                    <span style="font-size: 18px;">红包比例规则</span>
-                </el-form-item>
-            </el-form>
+            <div class="top_tit">
+				<h3>红包定价规则</h3>
+			</div>
 
             <el-table :data="tableData" border style="width: 100%">
                 <el-table-column align="center" prop="name" label="类型" width="150"></el-table-column>
@@ -102,7 +100,18 @@ export default {
 <style lang="less" scoped>
 	.priceRatio {
         .container {
-            padding: 20px;
+			padding: 20px;
+			.top_tit {
+				display: flex;
+				h3 {
+					flex: 1px;
+					color: #666666;
+					margin-bottom: 20px;
+				}
+				button {
+					margin-top: 10px;
+				}
+			}			
         }
 	    .bg1{
 	    	background: #C8F0FF;

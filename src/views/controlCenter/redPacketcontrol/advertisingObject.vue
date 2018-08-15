@@ -42,7 +42,7 @@
                         </el-checkbox-group>
                     </el-form-item>
                     <el-form-item label="红包简介">
-                        <el-input type="textarea" v-model="form.desc"></el-input size="small">
+                        <el-input type="textarea" v-model="form.desc" size="small"></el-input>
                     </el-form-item>
                     <el-form-item label="红包状态">
                         <el-radio-group v-model="form.resource" size="small">

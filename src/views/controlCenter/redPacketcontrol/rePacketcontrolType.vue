@@ -57,7 +57,7 @@
                         </el-select>
                     </el-form-item>
                     <el-form-item label="字段说明">
-                    	<el-input type="textarea" v-model="form.desc"></el-input size="small">
+                    	<el-input type="textarea" v-model="form.desc"  size="small"></el-input>
                     </el-form-item>
                     <el-form-item label="子字段：">
                     	<el-button size="mini" type="warning" @click="batchAdd = true">批量添加</el-button>
@@ -101,7 +101,7 @@
 			<el-dialog title="批量添加" :visible.sync="batchAdd">
 			  <el-form :model="form">
 			    <el-form-item>
-			        <el-input type="textarea" v-model="form.desc" placeholder="请输入字段名，并以Enter键隔开"></el-input size="small">
+			        <el-input type="textarea" size="small" v-model="form.desc" placeholder="请输入字段名，并以Enter键隔开"></el-input>
 			    </el-form-item>
 			  </el-form>
 			  <div slot="footer" class="dialog-footer">
