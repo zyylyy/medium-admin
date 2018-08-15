@@ -21,23 +21,23 @@
 						  <el-col :span="3"><div class="grid-content">{{ '30%' }}</div></el-col>
 						</el-row>
 						<el-row style="margin-left:30px;">
-						  <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
-						  <el-col :span="3"><div class="grid-content bg-purple-light"></div></el-col>
-						  <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
-						  <el-col :span="3"><div class="grid-content bg-purple-light"></div></el-col>
-						  <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
-						  <el-col :span="3"><div class="grid-content bg-purple-light"></div></el-col>
-						  <el-col :span="3"><div class="grid-content bg-purple-light"></div></el-col>
+						  <el-col :span="3"><div class="grid-content bg1"></div></el-col>
+						  <el-col :span="3"><div class="grid-content bg2"></div></el-col>
+						  <el-col :span="3"><div class="grid-content bg3"></div></el-col>
+						  <el-col :span="3"><div class="grid-content bg4"></div></el-col>
+						  <el-col :span="3"><div class="grid-content bg5"></div></el-col>
+						  <el-col :span="3"><div class="grid-content bg6"></div></el-col>
+						  <el-col :span="3"><div class="grid-content bg7"></div></el-col>
 						</el-row>
 						<el-row style="text-align: left;">
 						  <el-col :span="3"><div class="grid-content">{{ '0.31元' }}</div></el-col>
-						  <el-col :span="3"><div class="grid-content">{{ '0.31元' }}</div></el-col>
-						  <el-col :span="3"><div class="grid-content">{{ '0.31元' }}</div></el-col>
-						  <el-col :span="3"><div class="grid-content">{{ '0.31元' }}</div></el-col>
-						  <el-col :span="3"><div class="grid-content">{{ '0.31元' }}</div></el-col>
-						  <el-col :span="3"><div class="grid-content">{{ '0.31元' }}</div></el-col>
-						  <el-col :span="3"><div class="grid-content">{{ '0.31元' }}</div></el-col>
-						  <el-col :span="3"><div class="grid-content">{{ '0.31元' }}</div></el-col>
+						  <el-col :span="3"><div class="grid-content">{{ '5.50元' }}</div></el-col>
+						  <el-col :span="3"><div class="grid-content">{{ '10.00元' }}</div></el-col>
+						  <el-col :span="3"><div class="grid-content">{{ '15.00元' }}</div></el-col>
+						  <el-col :span="3"><div class="grid-content">{{ '18.00元' }}</div></el-col>
+						  <el-col :span="3"><div class="grid-content">{{ '20.00元' }}</div></el-col>
+						  <el-col :span="3"><div class="grid-content">{{ '25.00元' }}</div></el-col>
+						  <el-col :span="3"><div class="grid-content">{{ '30.00元' }}</div></el-col>
 						</el-row>
 					</template>
                 </el-table-column>
@@ -104,27 +104,31 @@ export default {
         .container {
             padding: 20px;
         }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    min-height: 15px;
-    position: relative;
-    span {
-    	font-size: 12px;
-    	position: absolute;
-    	top: 0;
-    }
-  }
-  .row-bg {
-    padding: 5px 0;
-    background-color: #f9fafc;
-  }
+	    .bg1{
+	    	background: #C8F0FF;
+	    }
+	    .bg2{
+	    	background: #88DEFF;
+	    }
+	    .bg3{
+	    	background: #42CBFF;
+	    }
+	    .bg4{
+	    	background: #0FBDFF;
+	    }
+	    .bg5{
+	    	background: #0097D0;
+	    }
+	    .bg6{
+	    	background: #005E82;
+	    }
+	    .bg7{
+	    	background: #003144;
+	    }
+		.grid-content {
+			min-height: 15px;
+			position: relative;
+			font-size: 12px;
+		}
 	}
 </style>
