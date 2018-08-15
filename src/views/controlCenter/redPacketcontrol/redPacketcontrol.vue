@@ -13,10 +13,10 @@
             <el-table :data="tableData" border style="width: 100%">
                 <el-table-column align="center" prop="address" label="投放关系" width="220"></el-table-column>
                 <el-table-column align="center" prop="name" label="红包类型" width="150"></el-table-column>
-                <el-table-column align="center" prop="province" label="广告对象" width="150"></el-table-column>
-                <el-table-column align="center" prop="city" label="状态" width="220"></el-table-column>
-                <el-table-column align="center" prop="date" label="执行时间" width="220"></el-table-column>
-                <el-table-column align="center" prop="dates" label="状态更新时间" width="180"></el-table-column>
+                <el-table-column align="center" prop="province" label="广告对象" min-width="150"></el-table-column>
+                <el-table-column align="center" prop="city" label="状态" min-width="220"></el-table-column>
+                <el-table-column align="center" prop="date" label="执行时间" min-width="220"></el-table-column>
+                <el-table-column align="center" prop="dates" label="状态更新时间" min-width="180"></el-table-column>
                 <el-table-column fixed="right" label="操作" width="100">
                   <template slot-scope="scope">
                     <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
