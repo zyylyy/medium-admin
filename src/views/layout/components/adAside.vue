@@ -66,11 +66,16 @@ export default {
 					this.updateList(item.children, flog)
 				}
 			})
-
 			this.dataList = this.menuItem.children || []
 		},
 		checkAside(item){
-			this.$emit('checkAside', item)
+			sessionStorage.setItem('asideFlog', item.flog)
+			if(item.path){
+				this.$router.push(item.path)
+			}else {
+				this.$emit('checkAside', item)
+			}
+			
 		}
 	},
 }

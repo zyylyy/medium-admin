@@ -1,7 +1,7 @@
 <template>
 	<div class="layout">
 		<ad-aside 
-		  flog="0"
+		  :flog="headFlog"
 		  :asideList="asideList"
 		  @checkAside="checkAside">
 		  </ad-aside>
@@ -11,7 +11,7 @@
 			  </ad-header>
 			<div class="container_box">
 				<ad-meun 
-				  flog="01"
+				  :flog="asideFlog"
 				  :mainList="mainList"></ad-meun>
 				<div class="main">
 					<router-view></router-view>
@@ -39,10 +39,14 @@ export default {
 			asideList: [],
 			mainList: [],
 			menuList: [],
+
+			asideFlog: '01',
+			headFlog: '0',
 		}
 	},
 	mounted() {
-		
+		this.headFlog = sessionStorage.getItem('headFlog') ? sessionStorage.getItem('headFlog') : '0'
+		this.asideFlog = sessionStorage.getItem('asideFlog') ? sessionStorage.getItem('asideFlog') : '01'
 	},
 	methods: {
 		updateList(arr, flog){

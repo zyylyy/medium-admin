@@ -14,22 +14,26 @@
 						"children": [
 							{
 								"title": "红包类型",
-								"path": "",
+								"path": "/rePacketcontrolType",
 								"flog": "0111"
 							},{
 								"title": "广告对象",
-								"flog": "0122"
+								"flog": "0122",
+								"path": "/advertisingObject"
 						    }
 					    ]
 					},{
 						"title": "展示位控制",
-						"flog": "012"
+						"flog": "012",
+						"path": "/displayControl"
 					},{
 						"title": "红包定价规则",
-						"flog": "013"
+						"flog": "013",
+						"path": "/pricingRules"
 					},{
 						"title": "红包比例规则",
-						"flog": "014"
+						"flog": "014",
+						"path": "/priceRatio"
 					}
 			    ]
 			},
@@ -73,6 +77,16 @@
 						"path": "/redPacketcontrol"
 					}
 			    ]
+			},{
+				"title": "敏感词控制",
+				"flog": "03",
+				"children": [
+					{
+						"title": "订单时限控制",
+						"flog": "021",
+						"path": "/redPacketcontrol"
+					}
+			    ]				
 			}
 	    ]
 	},

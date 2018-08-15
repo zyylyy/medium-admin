@@ -25,6 +25,7 @@ export default {
 	},
 	methods: {
 		checkTabs(item){
+			sessionStorage.setItem('headFlog', item.flog)
 			this.$emit('checkTabs', item)
 		},
 	},
