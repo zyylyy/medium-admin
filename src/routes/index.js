@@ -7,7 +7,7 @@ import controlCenter from './map/controlCenter'
 export default [
     { 
 		path: '/',
-		redirect: '/home',
+		redirect: '/layout',
 		component: layout,
     },
 	{

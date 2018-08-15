@@ -6,7 +6,7 @@ import routes from './routes'
 import store from './vuex'                     
 import {sync} from 'vuex-router-sync'                         
 import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import '!style-loader!css-loader!less-loader!element-ui/lib/theme-chalk/index.css';
 
 import '!style-loader!css-loader!less-loader!./assets/css/normalize.css'  // normalize重置浏览器样式
 

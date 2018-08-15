@@ -1,6 +1,7 @@
 <template>
 	<div class="layout">
 		<ad-aside 
+		  flog="0"
 		  :asideList="asideList"
 		  @checkAside="checkAside">
 		  </ad-aside>
@@ -10,6 +11,7 @@
 			  </ad-header>
 			<div class="container_box">
 				<ad-meun 
+				  flog="01"
 				  :mainList="mainList"></ad-meun>
 				<div class="main">
 					<router-view></router-view>
@@ -57,13 +59,12 @@ export default {
 		},
 		checkAside(item){
 			this.mainList = item.children
-			console.log(this.mainList)
 		}
 	},
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     .layout {
     	display: flex;
     	.container {
@@ -75,8 +76,9 @@ export default {
     			min-height: calc(~ '100vh - 88px');
     			background-color: #ccc;
     			.main {
-    				width: 100%;
+    				background-color: #fff;
     				margin-left: 30px;
+    				width: calc(~ '100vw - 320px');
     				min-height: calc(~ '100vh - 200px');
     			}
     		}

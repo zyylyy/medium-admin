@@ -20,6 +20,7 @@ export default {
 </script>
 <style >
     #app {
-        podistion: relative;
+        position: relative;
+        height: 100%;
     }
 </style>

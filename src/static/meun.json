@@ -23,13 +23,54 @@
 					    ]
 					},{
 						"title": "展示位控制",
-						"flog": "021"
+						"flog": "012"
 					},{
 						"title": "红包定价规则",
-						"flog": "031"
+						"flog": "013"
 					},{
 						"title": "红包比例规则",
-						"flog": "041"
+						"flog": "014"
+					}
+			    ]
+			},
+			{
+				"title": "财务控制",
+				"flog": "02",
+				"children": [
+					{
+						"title": "收益控制",
+						"flog": "021",
+						"path": "/redPacketcontrol",
+						"children": [
+							{
+								"title": "平台收益",
+								"path": "",
+								"flog": "0221"
+							},{
+								"title": "服务商收益",
+								"flog": "0222"
+						    },{
+								"title": "新媒人收益",
+								"flog": "0222"						    	
+						    }
+					    ]
+					},{
+						"title": "账期控制",
+						"flog": "022"
+					},{
+						"title": "支付控制",
+						"flog": "023"
+					}
+			    ]
+			},
+			{
+				"title": "订单控制",
+				"flog": "03",
+				"children": [
+					{
+						"title": "订单时限控制",
+						"flog": "021",
+						"path": "/redPacketcontrol"
 					}
 			    ]
 			}
