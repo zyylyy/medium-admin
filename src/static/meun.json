@@ -1,0 +1,57 @@
+[
+	{
+		"title": "控制中心",
+		"flog": "0",
+		"children": [
+			{
+				"title": "红包控制",
+				"flog": "01",
+				"children": [
+					{
+						"title": "红包配置",
+						"flog": "011",
+						"path": "/redPacketcontrol",
+						"children": [
+							{
+								"title": "红包类型",
+								"path": "",
+								"flog": "0111"
+							},{
+								"title": "广告对象",
+								"flog": "0122"
+						    }
+					    ]
+					},{
+						"title": "展示位控制",
+						"flog": "021"
+					},{
+						"title": "红包定价规则",
+						"flog": "031"
+					},{
+						"title": "红包比例规则",
+						"flog": "041"
+					}
+			    ]
+			}
+	    ]
+	},
+	{
+		"title": "用户中心",
+		"flog": "1",
+		"children": [
+			{
+				"title": "会员用户列表",
+				"flog": "11"
+			},{
+				"title": "企业主列表",
+				"flog": "12"
+			},{
+				"title": "服务商列表",
+				"flog": "13"
+			},{
+				"title": "游客列表",
+				"flog": "14"
+			}
+	    ]
+	}
+]
