@@ -11,9 +11,10 @@
 			  </ad-header>
 			<div class="container_box">
 				<ad-meun 
+				  ref="adMeun"
 				  :flog="asideFlog"
 				  :mainList="mainList"></ad-meun>
-				<div class="main">
+				<div class="main" :class="mainList.length ? '' : 'active'">
 					<router-view></router-view>
 				</div>
 			</div>
@@ -47,6 +48,10 @@ export default {
 	mounted() {
 		this.headFlog = sessionStorage.getItem('headFlog') ? sessionStorage.getItem('headFlog') : '0'
 		this.asideFlog = sessionStorage.getItem('asideFlog') ? sessionStorage.getItem('asideFlog') : '01'
+
+		this.$nextTick(()=>{
+			this.mainList = this.$refs.adMeun.dataList
+		})
 	},
 	methods: {
 		updateList(arr, flog){
@@ -77,14 +82,18 @@ export default {
     		.container_box {
     			display: flex;
     			margin-top: 20px;
-    			min-height: calc(~ '100vh - 88px');
+    			min-height: calc(~ '100vh');
     			background-color: #ccc;
     			.main {
     				background-color: #fff;
     				margin-left: 30px;
-    				width: calc(~ '100vw - 320px');
+    				width: calc(~ '100vw - 330px');
     				min-height: calc(~ '100vh - 200px');
     			}
+    			.active {
+    				margin-left: 0;
+    				width: calc(~ '100vw - 100px');    			
+    		    }
     		}
     	}
     }

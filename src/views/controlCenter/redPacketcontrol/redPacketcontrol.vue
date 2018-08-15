@@ -6,7 +6,7 @@
                     <span>红包配置</span>
                 </el-form-item>
                 <el-form-item style="float:right;">
-                    <el-button size="small">新增</el-button>
+                    <el-button size="small" @click="dialogFormVisible = true">增加配置</el-button>
                 </el-form-item>
             </el-form>
 
@@ -23,7 +23,26 @@
                     <el-button type="text" size="small">编辑</el-button>
                   </template>
                 </el-table-column>
-            </el-table>             
+            </el-table> 
+
+
+            <el-dialog title="增加红包配置" :visible.sync="dialogFormVisible">
+                <el-form :model="form">
+                    <el-form-item label="活动名称">
+                        <el-input v-model="form.name" auto-complete="off"></el-input>
+                    </el-form-item>
+                    <el-form-item label="活动区域" :label-width="formLabelWidth">
+                        <el-select v-model="form.region" placeholder="请选择活动区域">
+                            <el-option label="区域一" value="shanghai"></el-option>
+                            <el-option label="区域二" value="beijing"></el-option>
+                        </el-select>
+                    </el-form-item>
+                </el-form>
+                <div slot="footer" class="dialog-footer">
+                    <el-button @click="dialogFormVisible = false" size="small">取 消</el-button>
+                    <el-button type="primary" @click="dialogFormVisible = false" size="small">确 定</el-button>
+                </div>
+            </el-dialog>            
         </div>
 	</div>
 </template>
@@ -37,6 +56,7 @@ export default {
 	},
 	data() {
 		return {
+            dialogFormVisible: false,
 			tableData: [{
                 date: '2016-05-03-2016-05-03',
                 dates: '2016-05-03-2016-05-03',
@@ -45,7 +65,10 @@ export default {
                 city: '普陀区',
                 address: '上海市普陀区金沙江路 1518 弄',
                 zip: 200333
-            }]
+            }],
+            form: {
+
+            },
 		}
 	},
 	watch: {
