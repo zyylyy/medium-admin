@@ -3,10 +3,13 @@
         <div class="container">
             <el-form :inline="true">
                 <el-form-item>
-                    <span>红包配置</span>
+                    <span style="font-size: 18px;">红包配置</span>
                 </el-form-item>
                 <el-form-item style="float:right;">
-                    <el-button size="small" @click="dialogFormVisible = true">增加配置</el-button>
+                    <el-button 
+                      size="small"
+                      type="primary"
+                      @click="dialogFormVisible = true">增加配置</el-button>
                 </el-form-item>
             </el-form>
 
@@ -20,22 +23,50 @@
                 <el-table-column fixed="right" label="操作" width="100">
                   <template slot-scope="scope">
                     <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-                    <el-button type="text" size="small">编辑</el-button>
+                    <el-button type="text" size="small" @click="edit(scope.row)">编辑</el-button>
                   </template>
                 </el-table-column>
             </el-table> 
 
 
-            <el-dialog title="增加红包配置" :visible.sync="dialogFormVisible">
-                <el-form :model="form">
-                    <el-form-item label="活动名称">
-                        <el-input v-model="form.name" auto-complete="off"></el-input>
-                    </el-form-item>
-                    <el-form-item label="活动区域" :label-width="formLabelWidth">
-                        <el-select v-model="form.region" placeholder="请选择活动区域">
+            <el-dialog :title="isEdit ? '编辑红包配置' : '增加红包配置'" :visible.sync="dialogFormVisible">
+                <el-form ref="form" :model="form" label-width="100px">
+                    <el-form-item label="红包关系">
+                        <el-select v-model="form.region" size="small" placeholder="请选择活动区域">
                             <el-option label="区域一" value="shanghai"></el-option>
                             <el-option label="区域二" value="beijing"></el-option>
                         </el-select>
+                    </el-form-item>
+                    <el-form-item label="类型名称">
+                        <el-select v-model="form.region" size="small" placeholder="请选择活动区域">
+                            <el-option label="区域一" value="shanghai"></el-option>
+                            <el-option label="区域二" value="beijing"></el-option>
+                        </el-select>
+                    </el-form-item>
+                    <el-form-item label="广告对象：">
+                        <el-checkbox-group v-model="form.type" size="small">
+                            <el-checkbox label="实物图文" name="type"></el-checkbox>
+                            <el-checkbox label="APP图文" name="type"></el-checkbox>
+                            <el-checkbox label="售卖商品" name="type"></el-checkbox>
+                        </el-checkbox-group>
+                    </el-form-item>
+                    <el-form-item label="红包简介">
+                        <el-input type="textarea" v-model="form.desc"></el-input size="small">
+                    </el-form-item>
+                    <el-form-item label="红包状态">
+                        <el-radio-group v-model="form.resource" size="small">
+                            <el-radio label="开启"></el-radio>
+                            <el-radio label="关闭"></el-radio>
+                        </el-radio-group>
+                    </el-form-item>
+
+                    <el-form-item label="执行时间">
+                        <el-date-picker
+                          size="small"
+                          v-model="value1"
+                          type="datetime"
+                          placeholder="选择执行时间">
+                        </el-date-picker>
                     </el-form-item>
                 </el-form>
                 <div slot="footer" class="dialog-footer">
@@ -67,8 +98,10 @@ export default {
                 zip: 200333
             }],
             form: {
-
+                value1: '',
             },
+
+            isEdit: false,
 		}
 	},
 	watch: {
@@ -77,10 +110,17 @@ export default {
 	methods: {
 		handleClick(row) {
             console.log(row);
-        }
+        },
+        edit(){
+            this.isEdit = true
+            this.dialogFormVisible = true
+        },
+        add(){
+            this.isEdit = false
+            this.dialogFormVisible = true
+        },
 	},
 	mounted() {
-		
 	},
 }
 </script>

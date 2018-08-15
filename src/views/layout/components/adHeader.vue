@@ -1,7 +1,9 @@
 <template>
 	<div class="adHeader">
 		<div class="nav">
-			<span v-for="item in menulits" @click="checkTabs(item, index)">{{ item.title }}</span>
+			<span 
+			  v-for="item in menulits" 
+			  @click="checkTabs(item, index)">{{ item.title }}</span>
 		</div>
 	</div>
 </template>
