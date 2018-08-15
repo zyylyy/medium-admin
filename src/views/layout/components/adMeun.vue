@@ -1,15 +1,13 @@
 <template>
 	<div class="adMeun" v-if="dataList.length">
 	    <el-menu
-	      default-active="2"
 	      class="el-menu-vertical-demo">
 	        <el-submenu :index="item.flog" v-for="(item , index) in dataList">
 		        <template slot="title">
-		            <i class="el-icon-location"></i>
 		            <span @click="toTath(item, index)">{{ item.title }}</span>
 		        </template>
 		        <el-menu-item-group v-for="(obj, i) in item.children">
-		            <template slot="title"><p @click="toTath(obj, index)">{{ obj.title }}</p></template>
+		        	<el-menu-item :index="obj.flog"><p @click="toTath(obj, index)">{{ obj.title }}</p></el-menu-item>
 		        </el-menu-item-group>
 	        </el-submenu>
 	    </el-menu>
