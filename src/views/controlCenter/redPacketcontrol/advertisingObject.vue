@@ -7,12 +7,12 @@
                 </el-form-item>
             </el-form>
 
-            <el-table :data="tableData" border style="width: 100%">
-                <el-table-column align="center" prop="address" label="投放关系" width="220"></el-table-column>
-                <el-table-column align="center" prop="name" label="类型" width="150"></el-table-column>
-                <el-table-column align="center" prop="province" label="属性" width="300"></el-table-column>
-                <el-table-column align="center" prop="dates" label="状态更新时间" width="220"></el-table-column>
-                <el-table-column fixed="right" label="操作" width="100">
+            <el-table class="table_a" :data="tableData" border style="width: 100%">
+                <el-table-column align="center" prop="address" label="投放关系" width="270"></el-table-column>
+                <el-table-column align="center" prop="name" label="类型" width="250"></el-table-column>
+                <el-table-column align="center" prop="province" label="属性" width="500"></el-table-column>
+                <el-table-column align="center" prop="dates" label="状态更新时间" width="353"></el-table-column>
+                <el-table-column align="center" fixed="right" label="操作" width="175">
                   <template slot-scope="scope">
                     <el-button type="text" size="small" @click="edit(scope.row)">编辑</el-button>
                   </template>
@@ -70,57 +70,52 @@
 </template>
 
 <script  type="text/babel">
-
 export default {
-	name: 'advertisingObject',
-	components: {
+  name: "advertisingObject",
+  components: {},
+  data() {
+    return {
+      dialogFormVisible: false,
+      tableData: [
+        {
+          date: "2016-05-03-2016-05-03",
+          dates: "2016-05-03-2016-05-03",
+          name: "王小虎",
+          province: "上海",
+          city: "普陀区",
+          address: "上海市普陀区金沙江路 1518 弄",
+          zip: 200333
+        }
+      ],
+      form: {
+        value1: ""
+      },
 
-	},
-	data() {
-		return {
-            dialogFormVisible: false,
-			tableData: [{
-                date: '2016-05-03-2016-05-03',
-                dates: '2016-05-03-2016-05-03',
-                name: '王小虎',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-            }],
-            form: {
-                value1: '',
-            },
-
-            isEdit: false,
-		}
-	},
-	watch: {
-
-	},
-	methods: {
-		handleClick(row) {
-            console.log(row);
-        },
-        edit(){
-            this.isEdit = true
-            this.dialogFormVisible = true
-        },
-        add(){
-            this.isEdit = false
-            this.dialogFormVisible = true
-        },
-	},
-	mounted() {
-		
-	},
-}
+      isEdit: false
+    };
+  },
+  watch: {},
+  methods: {
+    handleClick(row) {
+      console.log(row);
+    },
+    edit() {
+      this.isEdit = true;
+      this.dialogFormVisible = true;
+    },
+    add() {
+      this.isEdit = false;
+      this.dialogFormVisible = true;
+    }
+  },
+  mounted() {}
+};
 </script>
 
 <style lang="less" scoped>
-	.advertisingObject {
-        .container {
-            padding: 20px;
-        }
-	}
+.advertisingObject {
+  .container {
+    padding: 20px;
+  }
+}
 </style>

@@ -2,7 +2,7 @@
 	<div class="priceRatio">
         <div class="container">
             <div class="top_tit">
-				<h3>红包定价规则</h3>
+				<h3>红包比例规则</h3>
 			</div>
 
             <el-table :data="tableData" border style="width: 100%">
@@ -39,7 +39,7 @@
 						</el-row>
 					</template>
                 </el-table-column>
-                <el-table-column fixed="right" label="操作" width="100">
+                <el-table-column align="center" fixed="right" label="操作" width="100">
                   <template slot-scope="scope">
                     <el-button type="text" size="small" @click="edit(scope.row)">编辑</el-button>
                   </template>
@@ -50,94 +50,89 @@
 </template>
 
 <script  type="text/babel">
-
 export default {
-	name: 'priceRatio',
-	components: {
+  name: "priceRatio",
+  components: {},
+  data() {
+    return {
+      dialogFormVisible: false,
+      tableData: [
+        {
+          date: "2016-05-03-2016-05-03",
+          dates: "2016-05-03-2016-05-03",
+          name: "大众红包",
+          province: "上海",
+          city: "普陀区",
+          address: "上海市普陀区金沙江路 1518 弄",
+          zip: 200333
+        }
+      ],
+      form: {
+        value1: ""
+      },
 
-	},
-	data() {
-		return {
-            dialogFormVisible: false,
-			tableData: [{
-                date: '2016-05-03-2016-05-03',
-                dates: '2016-05-03-2016-05-03',
-                name: '大众红包',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-            }],
-            form: {
-                value1: '',
-            },
-
-            isEdit: false,
-		}
-	},
-	watch: {
-
-	},
-	methods: {
-		handleClick(row) {
-            console.log(row);
-        },
-        edit(){
-            this.isEdit = true
-            this.dialogFormVisible = true
-        },
-        add(){
-            this.isEdit = false
-            this.dialogFormVisible = true
-        },
-	},
-	mounted() {
-		
-	},
-}
+      isEdit: false
+    };
+  },
+  watch: {},
+  methods: {
+    handleClick(row) {
+      console.log(row);
+    },
+    edit() {
+      this.isEdit = true;
+      this.dialogFormVisible = true;
+    },
+    add() {
+      this.isEdit = false;
+      this.dialogFormVisible = true;
+    }
+  },
+  mounted() {}
+};
 </script>
 
 <style lang="less" scoped>
-	.priceRatio {
-        .container {
-			padding: 20px;
-			.top_tit {
-				display: flex;
-				h3 {
-					flex: 1px;
-					color: #666666;
-					margin-bottom: 20px;
-				}
-				button {
-					margin-top: 10px;
-				}
-			}			
-        }
-	    .bg1{
-	    	background: #C8F0FF;
-	    }
-	    .bg2{
-	    	background: #88DEFF;
-	    }
-	    .bg3{
-	    	background: #42CBFF;
-	    }
-	    .bg4{
-	    	background: #0FBDFF;
-	    }
-	    .bg5{
-	    	background: #0097D0;
-	    }
-	    .bg6{
-	    	background: #005E82;
-	    }
-	    .bg7{
-	    	background: #003144;
-	    }
-		.grid-content {
-			min-height: 15px;
-			position: relative;
-			font-size: 12px;
-		}
-	}
+.priceRatio {
+  .container {
+    padding: 20px;
+    .top_tit {
+      display: flex;
+      h3 {
+        flex: 1px;
+        color: #666666;
+        margin-bottom: 20px;
+      }
+      button {
+        margin-top: 10px;
+      }
+    }
+  }
+  .bg1 {
+    background: #c8f0ff;
+  }
+  .bg2 {
+    background: #88deff;
+  }
+  .bg3 {
+    background: #42cbff;
+  }
+  .bg4 {
+    background: #0fbdff;
+  }
+  .bg5 {
+    background: #0097d0;
+  }
+  .bg6 {
+    background: #005e82;
+  }
+  .bg7 {
+    background: #003144;
+  }
+  .grid-content {
+    min-height: 15px;
+    position: relative;
+    font-size: 12px;
+  }
+}
 </style>
