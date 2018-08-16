@@ -77,17 +77,17 @@ export default {
     .layout {
     	display: flex;
     	.container {
-    		margin-left: 20px;
+    		padding-left: 20px;
     		flex: 1;
     		.container_box {
     			display: flex;
-    			margin-top: 20px;
+    			padding-top: 20px;
     			min-height: calc(~ '100vh');
     			background-color: #ccc;
     			.main {
     				background-color: #fff;
     				margin-left: 30px;
-    				width: calc(~ '100vw - 330px');
+    				width: calc(~ '100vw - 360px');
     				min-height: calc(~ '100vh - 200px');
     			}
     			.active {
