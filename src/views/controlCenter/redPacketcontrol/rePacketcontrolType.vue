@@ -24,12 +24,12 @@
             <el-table :data="tableData" border tooltip-effect="dark"
 			  style="width: 100%"
 			  @selection-change="handleSelectionChange">
-                <el-table-column type="selection" width="55" label="选择"></el-table-column>
-                <el-table-column align="center" prop="name" label="属性名称" width="150"></el-table-column>
-                <el-table-column align="center" prop="province" label="字段类型" width="150"></el-table-column>
-                <el-table-column align="center" prop="city" label="限制条件" width="300"></el-table-column>
-                <el-table-column align="center" prop="date" label="字段说明" width="220"></el-table-column>
-                <el-table-column fixed="right" label="操作" width="100">
+                <el-table-column align="center" type="selection" width="70" label="选择"></el-table-column>
+                <el-table-column align="center" prop="name" label="属性名称" min-width="180"></el-table-column>
+                <el-table-column align="center" prop="province" label="字段类型" min-width="180"></el-table-column>
+                <el-table-column align="center" prop="city" label="限制条件" width="400"></el-table-column>
+                <el-table-column align="center" prop="date" label="字段说明" width="350"></el-table-column>
+                <el-table-column  label="操作" width="100">
                   <template slot-scope="scope">
                     <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
                     <el-button type="text" size="small" @click="edit(scope.row)">编辑</el-button>
@@ -114,85 +114,81 @@
 </template>
 
 <script  type="text/babel">
-
 export default {
-	name: 'rePacketcontrolType',
-	components: {
+  name: "rePacketcontrolType",
+  components: {},
+  data() {
+    return {
+      batchAdd: false,
+      dialogFormVisible: false,
+      tableData: [
+        {
+          date: "2016-05-03-2016-05-03",
+          dates: "2016-05-03-2016-05-03",
+          name: "王小虎",
+          province: "上海",
+          city: "普陀区",
+          address: "上海市普陀区金沙江路 1518 弄",
+          zip: 200333
+        }
+      ],
+      tableData1: [
+        {
+          name: "xxxx",
+          type: "0",
+          typeG: "1"
+        }
+      ],
+      form: {
+        value1: "",
+        desc: ""
+      },
 
-	},
-	data() {
-		return {
-			batchAdd: false,
-            dialogFormVisible: false,
-			tableData: [{
-                date: '2016-05-03-2016-05-03',
-                dates: '2016-05-03-2016-05-03',
-                name: '王小虎',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-            }],
-            tableData1: [{
-            	name: 'xxxx',
-            	type: '0',
-            	typeG: '1',
-            }],
-            form: {
-                value1: '',
-                desc: '',
-            },
+      isEdit: false,
 
-            isEdit: false,
-
-            selectlist: [],
-		}
-	},
-	watch: {
-
-	},
-	methods: {
-		deteleList(){
-			if(!this.selectlist.length) {
-				this.$message('请先选择要删除的数据');
-
-			}else {
-		        this.$alert('确定要删除选中的数据吗？', '批量删除', {
-		          confirmButtonText: '确定',
-		          callback: action => {
-		          	this.$message.success('删除成功');
-		          }
-		        });
-			}
-		},
-		handleDelete(index, item){
-			this.tableData1.splice(index, 1)
-		},
-		handleClick(row) {
-            console.log(row);
-        },
-        edit(){
-            this.isEdit = true
-            this.dialogFormVisible = true
-        },
-        add(){
-            this.isEdit = false
-            this.dialogFormVisible = true
-        },
-        handleSelectionChange(arr){
-        	this.selectlist = arr
-        },
-	},
-	mounted() {
-		
-	},
-}
+      selectlist: []
+    };
+  },
+  watch: {},
+  methods: {
+    deteleList() {
+      if (!this.selectlist.length) {
+        this.$message("请先选择要删除的数据");
+      } else {
+        this.$alert("确定要删除选中的数据吗？", "批量删除", {
+          confirmButtonText: "确定",
+          callback: action => {
+            this.$message.success("删除成功");
+          }
+        });
+      }
+    },
+    handleDelete(index, item) {
+      this.tableData1.splice(index, 1);
+    },
+    handleClick(row) {
+      console.log(row);
+    },
+    edit() {
+      this.isEdit = true;
+      this.dialogFormVisible = true;
+    },
+    add() {
+      this.isEdit = false;
+      this.dialogFormVisible = true;
+    },
+    handleSelectionChange(arr) {
+      this.selectlist = arr;
+    }
+  },
+  mounted() {}
+};
 </script>
 
 <style lang="less" scoped>
-	.rePacketcontrolType {
-        .container {
-            padding: 20px;
-        }
-	}
+.rePacketcontrolType {
+  .container {
+    padding: 20px;
+  }
+}
 </style>

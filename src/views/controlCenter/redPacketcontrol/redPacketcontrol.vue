@@ -2,8 +2,8 @@
 	<div class="redPacketcontrol">
         <div class="container">
             <div class="top_tit">
-				<h3>展示位控制</h3>
-				 <el-button type="primary" size="small">增加展示位</el-button>
+				<h3>红包配置</h3>
+				 <el-button @click="add()" type="primary" size="small">增加配置</el-button>
 			</div>
             <div class="bot_form">
                 <el-table :data="tableData" border style="width: 100%">
@@ -13,7 +13,7 @@
                     <el-table-column align="center" prop="city" label="状态" min-width="220"></el-table-column>
                     <el-table-column align="center" prop="date" label="执行时间" min-width="220"></el-table-column>
                     <el-table-column align="center" prop="dates" label="状态更新时间" min-width="180"></el-table-column>
-                    <el-table-column fixed="right" label="操作" width="100">
+                    <el-table-column align="center" fixed="right" label="操作" width="100">
                     <template slot-scope="scope">
                         <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
                         <el-button type="text" size="small" @click="edit(scope.row)">编辑</el-button>
@@ -72,69 +72,65 @@
 </template>
 
 <script  type="text/babel">
-
 export default {
-	name: 'redPacketcontrol',
-	components: {
+  name: "redPacketcontrol",
+  components: {},
+  data() {
+    return {
+      dialogFormVisible: false,
+      tableData: [
+        {
+          date: "2016-05-03-2016-05-03",
+          dates: "2016-05-03-2016-05-03",
+          name: "王小虎",
+          province: "上海",
+          city: "普陀区",
+          address: "上海市普陀区金沙江路 1518 弄",
+          zip: 200333
+        }
+      ],
+      form: {
+        value1: ""
+      },
 
-	},
-	data() {
-		return {
-            dialogFormVisible: false,
-			tableData: [{
-                date: '2016-05-03-2016-05-03',
-                dates: '2016-05-03-2016-05-03',
-                name: '王小虎',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-            }],
-            form: {
-                value1: '',
-            },
-
-            isEdit: false,
-		}
-	},
-	watch: {
-
-	},
-	methods: {
-		handleClick(row) {
-            console.log(row);
-        },
-        edit(){
-            this.isEdit = true
-            this.dialogFormVisible = true
-        },
-        add(){
-            this.isEdit = false
-            this.dialogFormVisible = true
-        },
-	},
-	mounted() {
-	},
-}
+      isEdit: false
+    };
+  },
+  watch: {},
+  methods: {
+    handleClick(row) {
+      console.log(row);
+    },
+    edit() {
+      this.isEdit = true;
+      this.dialogFormVisible = true;
+    },
+    add() {
+      this.isEdit = false;
+      this.dialogFormVisible = true;
+    }
+  },
+  mounted() {}
+};
 </script>
 
 <style lang="less" scoped>
-	.redPacketcontrol {
-        .container {
-			padding: 20px;
-			.top_tit {
-				display: flex;
-				h3 {
-					flex: 1px;
-					color: #666666;
-				}
-				button {
-					margin-top: 10px;
-				}
-			}
-			.bot_form {
-				margin-top:10px;
-			}
-        }
-	}
+.redPacketcontrol {
+  .container {
+    padding: 20px;
+    .top_tit {
+      display: flex;
+      h3 {
+        flex: 1px;
+        color: #666666;
+      }
+      button {
+        margin-top: 10px;
+      }
+    }
+    .bot_form {
+      margin-top: 10px;
+    }
+  }
+}
 </style>
